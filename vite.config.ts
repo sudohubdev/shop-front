@@ -6,6 +6,10 @@ import fs from 'fs';
 import path from 'path';
 import child_process from 'child_process';
 
+const isDotnet = process.env.IS_VSCODE !== "true"
+const ENDPOINT = isDotnet?'https://localhost:7215/' : 'https://homeip.sudohub.dev:7215/';
+
+
 const baseFolder =
     process.env.APPDATA !== undefined && process.env.APPDATA !== ''
         ? `${process.env.APPDATA}/ASP.NET/https`
@@ -47,7 +51,7 @@ export default defineConfig({
     server: {
         proxy: {
             '^/weatherforecast': {
-                target: 'https://localhost:7215/',
+                target: ENDPOINT,
                 secure: false
             }
         },

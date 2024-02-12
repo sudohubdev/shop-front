@@ -2,6 +2,34 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "command": "npm run dev",
+      "name": "React Prod",
+      "request": "launch",
+      "type": "node-terminal",
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "(\\s)",
+        "uriFormat": "https://localhost:5174/%s"
+      },
+      //enviroment variables
+      "env": {
+        "IS_VSCODE": "true"
+      }
+    },
+    {
+      "command": "npm run dev",
+      "name": "React with localhost from .NET",
+      "request": "launch",
+      "type": "node-terminal",
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "(\\s)",
+        "uriFormat": "https://localhost:5174/%s"
+      },
+    },
+    
+    //браузери
+    {
       "type": "edge",
       "request": "launch",
       "name": "localhost (Edge)",
