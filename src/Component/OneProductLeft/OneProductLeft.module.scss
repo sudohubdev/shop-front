@@ -1,0 +1,41 @@
+.swiper {
+    height: 465px;
+    width: 440px;
+}
+
+.oneProductLeft {
+    height: 465px;
+    width: 540px;
+    display: flex;
+    align-items: center;
+}
+
+.btnPrev {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.btnNext {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.swiperSlide {
+
+    img {
+        width: 100%;
+
+    }
+}

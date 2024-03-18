@@ -1,0 +1,60 @@
+
+
+.productsSwiper{
+    
+    padding: 0px 31px;
+    padding-left: 20px;
+    height: 320px;
+}
+.productsSwiperSlide{
+    width: 185px;
+}
+
+.products{
+    width: 1170px;
+}
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+.mainTitle{
+    max-width: 1040px;
+    width: 100%;
+    font-family: 'Montserrat';
+    font-size: 32px;
+    font-weight: 400;
+    color:#222222;
+    margin-top: 34px;
+    margin-bottom: 20px;
+    padding-left: 85px;
+}
+.mainWrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.btnPrev{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+.btnNext{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+}

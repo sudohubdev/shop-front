@@ -1,0 +1,114 @@
+
+.oneProductRight {
+    max-width: 718px;
+    margin-left: 70px;
+}
+
+.title {
+    font-family: 'Inter';
+    font-size: 32px;
+    font-weight: 400;
+
+}
+
+.rating {
+    padding-right: 60px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.countRewievs {
+
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 400;
+    color: #787171;
+
+    border-bottom: 1px solid #787171;
+
+}
+
+.stars {
+    display: flex;
+
+    img {
+        margin-right: 5px;
+    }
+}
+
+.characteristic {
+    width: 100%;
+    font-family: 'Inter';
+    font-size: 24px;
+    font-weight: 400;
+    color: #222222;
+
+}
+
+.characteristics {
+
+    margin-top: 40px;
+    max-width: 490px;
+    width: 100%;
+}
+
+.menu {
+    margin-top: 62px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.priceBlock {
+    span {
+        font-family: 'Inter';
+        font-size: 24px;
+        font-weight: 400;
+        color: #222222;
+        text-decoration: line-through;
+    }
+
+    .price {
+        color: #FB3F4C;
+        font-family: 'Inter';
+        font-size: 36px;
+        font-weight: 400;
+    }
+}
+
+.unHeartImg {
+    img {
+        width: 45px;
+        height: 45px;
+
+    }
+
+    padding-bottom: 5px;
+    margin-left: 28px;
+}
+
+.creditBtn {
+    font-family: 'Inter';
+    font-size: 24px;
+    font-weight: 500;
+    color: #222222;
+    background: none;
+    border: 3px solid #FFD338;
+    padding: 7px 22px;
+    border-radius: 10px;
+    margin-left: 14px;
+    cursor: pointer;
+}
+
+.cartbtn {
+    border-radius: 10px;
+    font-family: 'Inter';
+    font-size: 32px;
+    font-weight: 500;
+    color: #222222;
+    background: #FFD338;
+    border: none;
+    padding: 5px 9px;
+    cursor: pointer;
+    margin-left: 25px;
+}

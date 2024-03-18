@@ -1,0 +1,39 @@
+.comment{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.wrapper{
+    max-width: 1170px;
+    width: 100%;
+    padding-top: 32px;
+    padding-bottom: 51px;
+    border-top: 1px solid #7A7A7A;
+    display: flex;
+
+    border-bottom: 1px solid #7A7A7A;
+}
+.stars {
+    display: flex;
+
+    img {
+      
+        width: 30px;
+        height: 30px;
+    }
+}
+.commentText{
+    max-width: 750px;
+    font-size: 16px;
+    font-family: 'Inter';
+    font-weight: 400;
+    color: #222222;
+}
+
+.author{
+    font-size: 20px;
+    font-family: 'Inter';
+    font-weight: 600;
+    color: #222222;
+    margin-right: 147px;
+}

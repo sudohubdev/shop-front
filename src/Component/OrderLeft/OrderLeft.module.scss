@@ -1,0 +1,139 @@
+.OrderLeft{
+    max-width: 30%;
+    width: 100%;
+    padding: 0px 15px;
+   padding-top: 11px;
+   background: #F8F8F8;
+   border-radius: 20px;
+   border: 1px solid #8B8B8B;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   padding-bottom: 40px;
+}
+
+.title{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #B0B0B0;
+    h4{
+        font-size: 24px;
+        font-family: 'Roboto';
+        font-weight: 400;
+
+    }
+    margin-bottom: 12px;
+}
+
+
+.item{
+    padding-bottom: 14px;
+    border-bottom: 1px solid #B0B0B0;
+    padding-top: 13px;
+    display: flex;
+   position: relative;
+    align-items: center;
+}
+
+.itemImage{
+    img{
+        width: 80px;
+        height: 110px;
+    }
+}
+
+.priceBlock{
+  
+    span{
+        font-size: 14px;
+        font-family: 'Roboto';
+        font-weight: 400; 
+        text-decoration: line-through;
+    }
+
+    .price{
+        font-size: 18px;
+        font-family: 'Roboto';
+        font-weight: 400; 
+        color: #FB3F4C;
+    }
+
+    
+
+}
+.itemTitle{
+        font-size: 20px;
+        font-family: 'Roboto';
+        font-weight: 400; 
+        margin-bottom: 14px;
+    }
+.descrBlock{
+    margin-left: 21px;
+    height: 123px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.itemDeleteImage{
+   position: absolute;
+   bottom: 10px;
+   right: 20px;
+}
+
+.bottomBlock{
+    
+}
+
+.delivery{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #B0B0B0;
+    p{
+        font-size: 20px;
+        font-family: 'Inter';
+        font-weight: 400; 
+    }
+    div{
+        font-size: 16px;
+        font-family: 'Inter';
+        font-weight: 700; 
+    }
+}
+
+.payment{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+   
+    p{
+        font-size: 30px;
+        font-family: 'Inter';
+        font-weight: 400; 
+    }
+    div{
+        font-size: 30px;
+        font-family: 'Inter';
+        font-weight: 700; 
+    }
+}
+
+.buttonWrapper{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.button{
+    border: none;
+    background: #FFD338;
+    font-size: 24px;
+    font-family: 'Inter';
+    font-weight: 500; 
+    filter: drop-shadow(4px 4px 4px rgba(0,0,0,0.25));
+    padding: 10px;
+    border-radius: 10px;
+}
+

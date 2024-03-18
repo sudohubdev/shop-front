@@ -1,0 +1,95 @@
+
+.inputRadioBlockActive{
+    position: relative;
+    padding-top: 10px;
+    padding-left: 13px;
+    padding-bottom: 50px;
+    border: 2px solid #FFD338;
+    border-radius: 20px;
+    filter: drop-shadow(4px 0px 4px rgba(255,255,255,0.25));
+    margin-bottom: 15px;
+    label{
+      margin-left: 28px;
+      font-size: 20px;
+      font-family: 'Roboto';
+      font-weight: 400;
+    }
+    z-index: 100;
+
+
+}
+.inputRadioBlock{
+    position: relative;
+    margin-bottom: 15px;
+      label{
+        margin-left: 28px;
+        font-size: 20px;
+        font-family: 'Roboto';
+        font-weight: 400;
+      }
+}
+
+.select{
+    max-width: 637px;
+    width: 100%;
+    outline: none;
+    border: 2px solid #FFD338;
+    border-radius: 20px;
+    height: 40px;
+   
+    font-size: 20px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    color:#7A7A7A;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+   position: relative;
+   z-index: 100;
+   background: #fff;
+}
+
+.options{
+    list-style: none;
+    position: absolute;
+    width: 100%;
+   
+    padding-bottom: 20px;
+    height: 180px;
+    overflow: auto;
+    max-width: 637px;
+    width: 100%;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    top: 70px;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.option{
+    padding-left: 20px;
+    font-size: 18px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    margin-bottom: 7px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.option:hover{
+    background-color: #C8CDFF;
+}
+
+.selectWrapper{
+    margin-left: 40px;
+    margin-top: 15px;
+}
+ 
+  .select:after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 16px;
+    right: 10px;
+    background: url('../../assets//arrowBottom.svg');
+  }

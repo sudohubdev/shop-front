@@ -1,0 +1,59 @@
+.orderRight{
+    height: 100%;
+    width: 65%;
+    background: #F8F8F8;
+   border-radius: 20px;
+   border: 1px solid #8B8B8B;
+   padding: 0px 48px;
+   padding-top: 11px;
+}
+
+.title{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #B0B0B0;
+    h1{
+        font-size: 24px;
+        font-family: 'Roboto';
+        font-weight: 400;
+
+    }
+    margin-bottom: 12px;
+}
+
+
+
+.inputRadioBlock{
+    position: relative;
+    margin-bottom: 15px;
+      label{
+        margin-left: 28px;
+        font-size: 20px;
+        font-family: 'Roboto';
+        font-weight: 400;
+      }
+}
+
+.inputBlocks{
+    margin-top: 20px;
+}
+
+.inputRadioBlockActive{
+    position: relative;
+    padding-top: 10px;
+    padding-left: 13px;
+    padding-bottom: 50px;
+    border: 2px solid #FFD338;
+    border-radius: 20px;
+    filter: drop-shadow(4px 0px 4px rgba(255,255,255,0.25));
+    margin-bottom: 15px;
+    label{
+      margin-left: 28px;
+      font-size: 20px;
+      font-family: 'Roboto';
+      font-weight: 400;
+    }
+    z-index: 100;
+
+
+}
+
