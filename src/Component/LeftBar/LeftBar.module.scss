@@ -1,0 +1,74 @@
+.leftBar{
+    height: 100vh;
+  
+    padding-top: 49px;
+    max-width: 400px;
+    border-right: 1px solid #a3a3a3;
+    width: 100%;
+}
+.list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listItem{
+   cursor: pointer;
+    padding-left: 42px;
+    padding-right: 42px;
+    position: relative;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    a{
+        display: flex;
+        width: 34px;
+        img{
+            margin-right: 23px;
+        }
+        p{
+            font-family: 'Inter';
+            font-size: 24px;
+            font-weight: 400;
+        }
+    }
+}
+
+.listItemActive{
+    padding-left: 42px;
+    padding-right: 42px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #fff;
+    position: relative;
+    filter: drop-shadow(0px 3px 11px #3f3f3f);
+    cursor: pointer;
+    a{
+        display: flex;
+        width: 34px;
+        img{
+            margin-right: 23px;
+        }
+        p{
+            font-family: 'Inter';
+            font-size: 24px;
+            font-weight: 400;
+        }
+    }
+}
+
+.count{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #FFD600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-family: 'Roboto';
+    font-weight: 700;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+
+}

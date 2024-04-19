@@ -2,9 +2,11 @@
 import styles from './OrderRight.module.scss'
 import nullImg from '../../assets/null.svg'
 import DeliveryCurier from '../../Ui/Delivery/DeliveryCurier'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import DeliveryPosta from '../../Ui/DeliveryPosta/DeliveryPosta'
 import InputBlock from '../../Ui/InputBlock/InputBlock'
+import { useAppDispatch } from '../../store/store'
+import { addInfo } from '../../store/slices/OrderSlice'
 
 
 const OrderRight = ()  =>{
@@ -14,6 +16,37 @@ const OrderRight = ()  =>{
     const [surname,setSurname] = useState('')
     const [phone,setPhone] = useState('')
     const [town,setTown] = useState('')
+    const [method,setMethod] = useState('')
+    const [postOffice,setPostOffice] = useState('')
+
+
+    const dispatch = useAppDispatch()
+    useEffect(()=>{
+
+    switch (activeIndex) {
+        case 0:
+            setMethod('Meest Пошта')
+            break;
+        case 1:
+            setMethod('Нова Пошта')
+        break;
+            case 2:
+        setMethod('Укр Пошта')
+            break;
+        case 4:
+            setMethod('Кур`єром')
+        break;
+        
+    }
+    },[activeIndex])
+
+    useEffect(()=>{console.log(postOffice)},[postOffice])
+
+    useEffect(()=>{
+        dispatch(addInfo({legalName:`${name} ${surname}`,city:town,phone:phone,postOffice:postOffice,deliveryMethod:method,paymentMethod:"Paypel"}))
+    },[name,surname,town,phone,postOffice,method])
+
+
     const deliveryName= [
         {
             title: 'Самовивіз з Meest ПОШТА',
@@ -61,9 +94,9 @@ const OrderRight = ()  =>{
             <div className={styles.inputBlocks}>
            
 
-            <DeliveryCurier activeIndex={activeIndex} index={4} setActiveIndex={setActiveIndex}/>
+            <DeliveryCurier activeIndex={activeIndex} index={4} setPostOffice={setPostOffice} setActiveIndex={setActiveIndex}/>
             {deliveryName.map((item,index)=>(
-                <DeliveryPosta activeIndex={activeIndex} index={index} setActiveIndex={setActiveIndex} title={item.title} deliveryPlaces={item.address}/>
+                <DeliveryPosta setPostOffice={setPostOffice} activeIndex={activeIndex} index={index} setActiveIndex={setActiveIndex} title={item.title} deliveryPlaces={item.address}/>
             ))}
             
            

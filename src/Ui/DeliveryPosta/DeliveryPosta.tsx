@@ -7,19 +7,29 @@ export interface IDelivery{
     index:number
     setActiveIndex(activeIndex:number):void
     title:string
-    deliveryPlaces:string[]
+    deliveryPlaces:string[],
+    setPostOffice(postOffice:string):void
 }
 
 
 
-const DeliveryPosta:FC<IDelivery> = ({activeIndex,index,setActiveIndex,title,deliveryPlaces}) => {
+const DeliveryPosta:FC<IDelivery> = ({activeIndex,index,setActiveIndex,title,deliveryPlaces,setPostOffice}) => {
     const [isShow,setIsShow] = useState(false)
- 
+    const [name,setName] = useState('')
     
     const handleClick = () =>{
         setIsShow(!isShow)
     }
 
+
+    const activePostOffice = (item:any,e:React.MouseEvent<Element, MouseEvent>)=>{
+        e.target?.addEventListener('click',()=>{
+            setName(item)
+            setPostOffice(item)
+            setIsShow(false)
+        })
+        
+    }
   
 
     return (
@@ -32,13 +42,13 @@ const DeliveryPosta:FC<IDelivery> = ({activeIndex,index,setActiveIndex,title,del
 
               {activeIndex==index? <div className={styles.selectWrapper}>
                 <div className={styles.select} onClick={handleClick}>
-                    Виберіть відділення 
+                    {name?name:'Виберіть відділення '}
                 </div>  
                 {isShow?
                 <ul className={styles.options}>
                     
                     {deliveryPlaces.map(item=>(
-                        <li className={styles.option}>{item}</li>
+                        <li className={styles.option} onClick={(event)=>activePostOffice(item,event)}>{item}</li>
                     ))}    
                 </ul>       
                 :null}

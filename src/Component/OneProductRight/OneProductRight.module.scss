@@ -1,7 +1,6 @@
 
 .oneProductRight {
-    max-width: 718px;
-    margin-left: 70px;
+    margin-left: 125px;
 }
 
 .title {
@@ -104,6 +103,18 @@
     border-radius: 10px;
     font-family: 'Inter';
     font-size: 32px;
+    font-weight: 500;
+    color: #222222;
+    background: #FFD338;
+    border: none;
+    padding: 5px 9px;
+    cursor: pointer;
+    margin-left: 25px;
+}
+.cartbtnDel {
+    border-radius: 10px;
+    font-family: 'Inter';
+    font-size: 28px;
     font-weight: 500;
     color: #222222;
     background: #FFD338;

@@ -1,56 +1,91 @@
 
 import styles from './OneProductRight.module.scss'
 import starImg from '../../assets/star.svg'
+import noStarImg from '../../assets/nostar.svg'
 import unheartimg from '../../assets/unlike.svg'
+import heart from '../../assets/like.svg'
+import { useEffect, useState } from 'react'
+import { useGetProductsQuery } from '../../store/rtkQuery/productsApi';
+import { useNavigate, useParams } from 'react-router-dom';
+import Product, { IProduct } from '../Product/Product'
+import { addToCart, addToFavouriteProducts, deleteClick, deleteFromFavourite } from '../Product/IProduct';
+import { useAppDispatch, useAppSelector } from '../../store/store';
+import { setFavourites } from '../../store/slices/CartSlice'
 function OneProductRight() {
-    const characteristics = [
-        {
-            name: "Колір",
-            value: "Сірий"
-        },
-        {
-            name: "Екран",
-            value: "13.3'' Retina (2560x1600) WQXGA, глянцевий"
-        },
-        {
-            name: "Пам’ять",
-            value: "RAM 8 ГБ / SSD 256 ГБ"
-        },
-        {
-            name: "Наявніть",
-            value: "Wi-Fi, Bluetooth"
-        },
-        {
-            name: "Оперативна система",
-            value: "macOS Big Sur"
-        },
-        {
-            name: "Вага",
-            value: "1.29"
+    const {data} = useGetProductsQuery();
+    const stars = useAppSelector(state=>state.cart.stars)
+    const noStars = 5-stars
+    const {id} = useParams();
+    const product = data?.find(item=>item.id==Number(id))
+    const [favourite,setFavourite] = useState(false)
+    const isAuth = useAppSelector(state=>state.auth.isAuth)
+    const dispatch = useAppDispatch();
+    const [isInCart, setIsInCart] = useState(false)
+    const {favourites,cartItems} = useAppSelector(state=>state.cart)
+    const navigate = useNavigate()
+
+
+
+    const handlerClick = ()=>{
+        if(product){
+            const {id,discount,images,name,price} = product
+             addToCart(isAuth,dispatch,{count:1,discount,id,image:images[0],name,price},navigate)
+             setIsInCart(true)
         }
-    ]
+    }
+
+    const deleteFromCart = ()=>{
+        if(product){
+            deleteClick(Number(id),dispatch)
+            setIsInCart(false)
+        }
+    }
+
+    const addToFavourite = ()=>{
+        if(product){
+             const {id,discount,images,name,price} = product
+             addToFavouriteProducts(isAuth,dispatch,{count:1,discount,id,image:images[0],name,price},navigate)
+             setFavourite(true);
+        }
+    }
+    useEffect(()=>{
+       
+        if(!localStorage.getItem('favourites')) {
+        localStorage.setItem('favourites',JSON.stringify([])) 
+        }
+        else{
+        let favourites:IProduct[] = JSON.parse(localStorage.getItem('favourites')|| '')
+        dispatch(setFavourites(favourites))
+        }
+        console.log(stars)
+    },[])
+   
+
+    useEffect(()=>{
+
+        cartItems.map(item=>item.id==Number(id)?setIsInCart(true):setIsInCart(false))
+
+    },[cartItems])
 
     return (
         <div className={styles.oneProductRight}>
-                <h1 className={styles.title}>Ноутбук Apple MacBook Air 13" M1 8/256GB 2020 (MGN63) Space Gray</h1>
+                <h1 className={styles.title}>{product?.name}</h1>
                 <div className={styles.rating}>
                     <div className={styles.stars}>
-                        <img src={starImg} alt="" />
-                        <img src={starImg} alt="" />
-                        <img src={starImg} alt="" />
-                        <img src={starImg} alt="" />
-                        <img src={starImg} alt="" />
+                        {[...new Array(stars)].map(item=> <img src={starImg} alt="" />)}
+                        {[...new Array(noStars)].map(item=> <img src={noStarImg} alt="" />)}
+                        
                     </div>
                     <div className={styles.countRewievs}>
-                        97 відгуків
+                        {product?.feedbacks.length} відгуків
                     </div>
                 </div>
 
 
                 <div className={styles.characteristics}>
 
-                    {characteristics.map(item => (
-                        <div className={styles.characteristic}>{`${item.name}: `} {`${item.value}`}</div>
+                    {product?.characteristicsPairs.map(item => (
+                        <div className={styles.characteristic}>{`${item.key}: `} {`${item.value}`}</div>
                     ))}
 
                 </div>
@@ -59,17 +94,17 @@ function OneProductRight() {
 
                     <div className={styles.priceBlock}>
 
-                        <span>43 499₴</span>
-                        <div className={styles.price}>36 499₴</div>
+                        <span>{product?.discount}₴</span>
+                        <div className={styles.price}>{product?.price}₴</div>
 
                     </div>
 
                     <div className={styles.unHeartImg}>
-                        <img src={unheartimg} alt="" />
+                        {favourites.find(el=>el.id==product?.id)?<img src={heart} onClick={()=>deleteFromFavourite(product?product?.id:-1,dispatch)} alt="" />:<img src={unheartimg} onClick={addToFavourite} alt="" />}
                     </div>
 
                     <button className={styles.creditBtn}>Купити в кредит</button>
-                    <button className={styles.cartbtn}>В кошик</button>
+                   {!isInCart?<button className={styles.cartbtn} onClick={handlerClick} >В кошик</button>:<button className={styles.cartbtnDel} onClick={deleteFromCart} >Видалити з кошику</button>} 
                 </div>
             </div>
     );

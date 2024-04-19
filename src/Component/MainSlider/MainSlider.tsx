@@ -1,12 +1,11 @@
 import styles from '../MainSlider/MainSlider.module.scss'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import swiperImg from '../../assets/swiperSlide1.jpg'
+import swiperImg from '../../assets/swiperSlide1.png'
 import { Navigation, Pagination} from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
 import '../MainSlider/swiper.css'
 
 function MainSlider() {
@@ -19,6 +18,7 @@ function MainSlider() {
         // install Swiper modules
         modules={[Navigation, Pagination]}
         spaceBetween={50}
+        className='mySwiper'
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}

@@ -2,14 +2,30 @@
 import styles from './CommentBlock.module.scss'
 import starImg from '../../assets/star.svg'
 import unstar from '../../assets/nostar.svg'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useAddCommentMutation } from '../../store/rtkQuery/commentApi';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useAppSelector } from '../../store/store';
 
 function CommentBlock() {
     
     const [countStars,setCaountStars] = useState(0)
+    const [value,setValue] = useState('')
+    const isAuth = useAppSelector(state=>state.auth.isAuth)
+    const {id} = useParams()
+    const [addComment,{data,error}] = useAddCommentMutation()
+    const dispatch = useDispatch();
+    const navigate = useNavigate()
 
+    const sendFeedback = ()=>{
+        setCaountStars(0)
+        setValue('')
+        addComment({productId:id?id:'',text:value,rating:countStars})
+    }
 
-    console.log(countStars)
+    useEffect(()=>{error&&!isAuth?navigate('/login'):null},[isAuth,error])
+    
 
     return (
         <div className={styles.commentBlock}>
@@ -47,12 +63,14 @@ function CommentBlock() {
             </div>
 
             <div className={styles.text}>
-                <textarea name="text" className={styles.area} placeholder='Коментар' ></textarea>
+                <textarea name="text" className={styles.area} onChange={(e)=>setValue(e.target.value)} value={value} placeholder='Коментар' ></textarea>
             </div>
 
-
+            {error?<p className={styles.error}>Помилка при відправленні, можливо не вказаний рейтинг або текст занадто малий,можливо не ввійшли в акаунт</p>:null}
             <div className={styles.btnWrapper}>
-                {!true?<button className={styles.sentBtn}>Відправити</button>:<div className={styles.sentText}>Відправлено</div>}
+                
+                {!data?<button onClick={sendFeedback} className={styles.sentBtn}>Відправити</button>:<div className={styles.sentText}>Відправлено</div>}
+                
             </div>
             </div>
              

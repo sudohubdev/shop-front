@@ -14,9 +14,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { useGetProductsQuery } from '../../store/rtkQuery/productsApi';
+import { useParams } from 'react-router-dom';
 
 function OneProductLeft() {
     const swiperRef = useRef<SwiperType>();
+    const {data} = useGetProductsQuery();
+    const {id} = useParams();
+     const product = data?.find(item=>item.id==Number(id))
 
     return (
         <div>
@@ -37,11 +42,7 @@ function OneProductLeft() {
 
                     }}
                 >
-                    <SwiperSlide className={styles.swiperSlide}><img src={productImg} alt="" /></SwiperSlide>
-                    <SwiperSlide>Slide 2</SwiperSlide>
-                    <SwiperSlide>Slide 3</SwiperSlide>
-                    <SwiperSlide>Slide 4</SwiperSlide>
-
+                    {product?.images.map(image=><SwiperSlide style={{display:'flex',alignItems:'center',justifyContent:'center'}} className={styles.swiperSlide}><img src={image} alt="" /></SwiperSlide>)}
                 </Swiper>
                 <div className={styles.btnNext} onClick={() => { swiperRef.current?.slideNext() }}>
                     <img src={btnNext} alt="" />

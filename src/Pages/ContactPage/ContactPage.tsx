@@ -52,7 +52,39 @@ function ContactPage() {
             ))}
                
         </div>
-        <div></div>
+        <div className={styles.contactRight}>
+
+            <div className={styles.contactRightBlockAdress}>
+
+                <h4>Контакти</h4>
+                <div className={styles.adressText}>
+                <span className={styles.comunicaton}>МИ ЗАВЖДИ НА ЗВ'ЯЗКУ!</span>
+                <p>Ви можете <span className={styles.writeLetter}><a href="#">написати нам листа</a></span>, зателефонувати нам по телефонам
+                   <br/> (044) 374 03 83
+                   <br/>(0800) 50 77 40
+                </p>
+                </div>
+                <h4>Режим роботи</h4>
+               <p className={styles.graphic}>Інтернет магазин працює щодня з 7:55 до 20:05<br/>Доставка здійснюється з понеділка по суботу включно.</p>
+
+
+            </div>
+            <div className={styles.contactRightBlockСooperation}>
+                    
+                 <h4>Співпраця</h4>
+                <p>
+                    Ми раді співпрацювати з Вами! Для пропозицій пишіть на <span>пошту</span> чи дзвоніть за номером <br/> 0(800) 51 69 40
+                    <br/>
+                    <br/>
+                    Офіс
+                    <br/>
+                    м.Київ, вул. Саксаганського, 4а
+                </p>
+
+
+            </div>
+
+        </div>
       </div>
         
         </div>

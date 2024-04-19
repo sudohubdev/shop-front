@@ -1,0 +1,52 @@
+
+
+.wrapper{
+    padding-top: 100px;
+    display: flex;
+    
+}
+
+
+.rightBar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1{
+        font-size: 36px;
+        font-family: 'Roboto';
+        font-weight: 700;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+   
+}
+
+table{
+    max-width: 948px;
+    width: 100%;
+    border:1px solid #BCBCBC;
+    background: rgba(217, 217, 217, 0.22);
+    border-radius: 20px;
+}
+
+th{
+    font-family: 'Inter';
+    font-size: 24px;
+    font-weight: 400;
+    color: #8B8B8B;
+    padding-bottom: 20px;
+    padding-top: 30px;
+    
+}
+tbody{
+    margin-top: 20px;
+}
+td{
+    font-family: 'Inter';
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 35px;
+}
