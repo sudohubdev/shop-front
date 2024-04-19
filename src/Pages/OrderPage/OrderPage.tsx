@@ -12,7 +12,7 @@ function OrderPage() {
 
     return (
         <div>
-            <Header isShow={isShow} setIsShow={setIsShow}/>
+            <Header isShow={isShow} setIsShow={setIsShow} setIsShowCart={()=>{}}/>
             <div className={styles.wrapper}>
             <OrderRight/>
             <OrderLeft/>

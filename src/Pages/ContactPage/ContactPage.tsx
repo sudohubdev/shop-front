@@ -37,7 +37,7 @@ function ContactPage() {
     const [isShow,setIsShow] = useState(false);
     return (
         <div className={styles.ContactPage}>
-        <Header isShow={isShow} setIsShow={setIsShow}/>
+        <Header isShow={isShow} setIsShow={setIsShow} setIsShowCart={()=>{}}/>
         <div className={styles.ContactWrapper}>
             
       <h1 className={styles.title}>D_SHOP</h1>
