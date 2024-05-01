@@ -63,25 +63,25 @@ export interface IOrder{
     tagTypes: [ 'comments'],
     endpoints: (builder) => ({
         getProducts: builder.query<IResult[], void>({
-          query: () => `/products`,
+          query: () => `/productss`,
         }),
        
         getProductsWithTypes: builder.query<IResult[], string>({
-          query: (type:string) => `/products/type?type=${type}`,
+          query: (type:string) => `/productss/type?type=${type}`,
           
         }),
         getProductsWithSearch: builder.query<IResult[], string>({
-          query: (search:string) => `/products/search?q=${search}`,
+          query: (search:string) => `/productss/search?q=${search}`,
         }),
         orderPush: builder.mutation<IResultOrder, IOrder>({
           query: (order:IOrder) => ({
-            url: '/products/order',
+            url: '/productss/order',
             method: "POST",
             body:order
           })
         }),
         getOrders:builder.query<IOrder[], void>({
-          query: () => `/products/orders`,
+          query: () => `/productss/orders`,
         }),
       }),
     
