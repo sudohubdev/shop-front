@@ -21,7 +21,7 @@ import { IFeedBack } from "./productsApi";
     endpoints: (builder) => ({
       addComment: builder.mutation<IResult|FetchBaseQueryError, IFeedBackSend>({
         query: (feedback: IFeedBackSend) => ({
-          url: '/Products/feedback',
+          url: '/Productss/feedback',
           method: "POST",
           body: feedback
         }),
